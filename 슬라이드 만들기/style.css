@@ -1,0 +1,63 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.container{
+    width: 600px;
+    margin:0 auto;
+
+    /* 컨테이너 크기는 작은데, 이미지들은 커서 이미지가 컨테이너 영역을 탈출함. 그래서 컨테이너 영역 안에 있는 요소들이 넘친부분은 안보이게 하는것 */
+    overflow: hidden; 
+}
+
+h1{
+    text-align: center;
+}
+
+.album{
+    width: 600px;
+    height: 400px;
+}
+
+.images{
+    position: relative;
+    display: flex;
+    height: 400px;
+    transition: all 0.5s ease-in-out;
+}
+
+img{
+    /* position: absolute; */
+    width: 600px;
+    height: 400px;
+
+}
+
+button, button:active, button:focus{
+    width: 100px;
+    height: 30px;
+    color:white;
+    background-color: teal;
+    outline: none;
+    border:none;
+}
+
+button:hover{
+    background-color: turquoise;
+}
+
+button:disabled{
+    background-color: gray;
+}
+
+.prev{
+    float:left;
+    
+}
+
+.next{
+    float:right
+}
+

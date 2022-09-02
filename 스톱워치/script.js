@@ -35,6 +35,6 @@ function operTimer(){
 }
 
 btn_start.addEventListener("click", () => {
-  // 10ms마다 특정 1번째 인자의 함수가 동작하도록 함
+  // 10ms마다 특정 1번째 인자의 함수가 동작하도록 한다.
   setInterval(operTimer, 10);
 });

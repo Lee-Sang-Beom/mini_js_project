@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -50,4 +51,9 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* 추가 : init*/
+body {
+  background-color: rgba(0, 0, 0, 0.8);
 }/*# sourceMappingURL=reset.css.map */

@@ -1,3 +1,10 @@
+@mixin useFont {
+    letter-spacing: 1px;
+    font-family: 'Jua';
+
+}
+
+
 /* container */
 .container{
     position: relative;
@@ -39,13 +46,13 @@
             content: ' ';
 
             width: 3px;
-            height: 25px;
+            height: 22px;
              
             background-color: white;
         }
 
         .header_title{
-            
+            @include useFont;
             font-size: 1.5rem;
             font-weight: 700;
         }

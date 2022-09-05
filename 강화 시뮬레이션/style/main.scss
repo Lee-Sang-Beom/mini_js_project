@@ -5,6 +5,12 @@
 
 }
 
+@mixin useFont {
+    letter-spacing: 1px;
+    font-family: 'Jua';
+
+}
+
 .main {
     display: flex;
     justify-content: space-around;
@@ -57,18 +63,64 @@
                 left:-3px;
                 font-size:1.2rem;
                 font-weight: 700;
+                @include useFont;
   
             }
 
         }
 
         .main_bottom_area{
-            background-color: rgb(176, 218, 255);
-            width: 80%;
+            position: relative;
+            background-color: rgb(212, 235, 255);
+            width: 50%;
             height: 40%;
             border-radius: 25%;
             border: 1px solid rgb(71, 172, 255);
 
+            .success_rate{
+                position: absolute;
+                top:45%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                @include useFont;
+
+                .rate_text{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-right: 10px;
+                    
+                    
+                }
+                .rate_figure{
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: rgb(255, 77, 77);
+                    
+                }
+            }
+
+            .try_btn{
+                @include useFont;
+
+                position: absolute;
+                top:60%;
+                left:50%;
+                transform: translate(-50%, -50%);
+
+                background-color: rgb(1, 14, 90);
+                color:rgb(107, 255, 255);
+                padding: 5px 10px;
+                border-radius: 15px;
+
+                cursor:pointer;
+                transition: font-size 0.5s ease-in-out 0.05s;
+
+            }
+
+            .try_btn:hover{
+                font-size:1.2rem;
+            }
         }
 
     }

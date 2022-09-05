@@ -27,6 +27,8 @@
     width: calc(100% - 20px);
     height: calc(100% - 130px);
 
+    
+
     .main_left {
         @include main_box;
         display: flex;
@@ -47,6 +49,7 @@
             align-items:center;
 
             .current_figure{
+                transition: font-size 0.5s ease-in-out 0.05s;
                 margin-bottom: 10px;
                 font-size: 2rem;
                 font-weight: bold;
@@ -55,6 +58,7 @@
 
             img{
                 width: 25%;
+                transition: border-radius 0.8s ease-in-out 0.05s;
                 border-radius: 50%;
             }
 
@@ -64,12 +68,15 @@
                 font-size:1.2rem;
                 font-weight: 700;
                 @include useFont;
+                transition: font-size 0.5s ease-in-out 0.05s;
   
             }
 
         }
 
         .main_bottom_area{
+            transition: width 0.5s ease-in-out 0.05s;
+            transition: height 0.5s ease-in-out 0.05s;
             position: relative;
             background-color: rgb(212, 235, 255);
             width: 50%;
@@ -79,24 +86,59 @@
 
             .success_rate{
                 position: absolute;
-                top:45%;
+                width: 100%;
+                top:35%;
                 left:50%;
                 transform: translate(-50%, -50%);
                 display: flex;
+                justify-content: center;
                 @include useFont;
 
                 .rate_text{
                     font-size: 1rem;
                     font-weight: 600;
                     margin-right: 10px;
-                    
+                    transition: font-size 0.5s ease-in-out 0.05s;
                     
                 }
                 .rate_figure{
                     font-size: 1rem;
                     font-weight: bold;
                     color: rgb(255, 77, 77);
-                    
+                    transition: font-size 0.5s ease-in-out 0.05s;
+                }
+
+                .rate_figure::after{
+                    content:'%';
+                }
+            }
+
+            .fail_rate{
+                position: absolute;
+                width: 100%;
+                top:45%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                @include useFont;
+
+                .rate_text{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-right: 10px;
+                    transition: font-size 0.5s ease-in-out 0.05s;
+                }
+
+                .rate_figure{
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: rgb(255, 77, 77);
+                    transition: font-size 0.5s ease-in-out 0.05s;
+                }
+
+                .rate_figure::after{
+                    content:'%';
                 }
             }
 
@@ -119,7 +161,7 @@
             }
 
             .try_btn:hover{
-                font-size:1.2rem;
+                font-size:1rem;
             }
         }
 
@@ -127,5 +169,164 @@
 
     .main_right {
         @include main_box;
+    }
+}
+
+@mixin reduce_fontsize {
+    font-size:0.9rem;
+    transition: font-size 0.5s ease-in-out 0.05s;
+}
+
+@media screen and (max-width:1024px) {
+    .main{
+        
+        .main_left{
+            .main_upper_area{
+
+                .current_figure{
+                    transition: font-size 0.5s ease-in-out 0.05s;
+                    font-size: 1.6rem;
+                }
+
+                img{
+                    transition: border-radius 0.8s ease-in-out 0.05s;
+                    border-radius: 25%;
+                }
+
+                h2{
+                    transition: font-size 0.5s ease-in-out 0.05s;
+                    font-size: 1rem;
+                }
+            }
+
+            .main_bottom_area{
+                .success_rate{
+                    
+                    .rate_text{
+                        @include reduce_fontsize;
+                    }
+                    .rate_figure{
+                        @include reduce_fontsize;
+                    }
+                }
+                .fail_rate{
+                    .rate_text{
+                        @include reduce_fontsize;
+                    }
+                    .rate_figure{
+                        @include reduce_fontsize;
+                    }
+                }
+                .try_btn{
+                    font-size:0.7rem;
+                }
+                .try_btn:hover{
+                    font-size:0.8rem;
+                }
+            }
+
+        }
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    .main{
+        flex-direction: column;
+        height: calc(100% - 130px);
+
+        .main_left{
+            width: 100%;
+            height: 50%;
+
+            .main_upper_area{
+                svg{
+                    display:none;
+                }
+
+                img{
+                    width: 15%;
+                }
+
+                h2{
+                    margin : 15px 0 0 0;
+                    left:0;
+                }
+            }
+
+            .main_bottom_area{
+                width: 60%;
+                height: 35%;
+                .success_rate{
+                    margin-bottom:5px;
+                    
+                }
+                .fail_rate{
+                    margin:5px 0;
+                    
+                }
+                .try_btn{
+                    margin-top:15px;
+                }
+                
+            }
+
+        }
+
+        .main_right{
+            width: 100%;
+            height: 50%;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .main{
+
+
+        .main_left{
+
+            .main_upper_area{
+
+
+                h2{
+                    margin : 15px 0 0 0;
+                    left:0;
+                    font-size:0.9rem;
+                }
+            }
+
+            .main_bottom_area{
+                width: 50%;
+                height: 25%;
+                .success_rate{
+                    margin-bottom:5px;
+                    .rate_text{
+                        font-size:0.8rem;
+                    }
+                    .rate_figure{
+                        font-size:0.8rem;
+                    }
+                }
+                .fail_rate{
+                    margin:5px 0;
+                    .rate_text{
+                        font-size:0.8rem;
+                    }
+                    .rate_figure{
+                        font-size:0.8rem;
+                    }
+                }
+                .try_btn{
+                    margin-top:15px;
+                    font-size:0.5rem;
+                }
+                .try_btn:hover{
+                    font-size:0.7rem;
+                }
+            }
+
+        }
     }
 }

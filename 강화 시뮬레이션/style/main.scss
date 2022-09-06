@@ -11,6 +11,8 @@
 
 }
 
+$table-border-color: #008cba;
+
 .main {
     display: flex;
     justify-content: space-around;
@@ -169,6 +171,43 @@
 
     .main_right {
         @include main_box;
+
+        .wrap_table{
+            display: flex;
+            justify-content: center;
+            font-family: "Jua";
+            height: 100%;
+
+            #probability_table{
+                width: 80%;
+                max-width: 100%;
+                margin: 10px;
+                text-align: center;
+                border-collapse: collapse;
+
+                thead{
+                    border-bottom: 3px solid $table-border-color;
+                    font-weight: 600;
+                    
+                    tr{
+                        th{
+                            padding: 0.3rem 0;
+                            font-size:1.1rem;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            padding-top:0.8rem;
+                            font-size:0.9rem;
+                        }
+                    }
+                    border-bottom: 3px solid $table-border-color;
+                }
+            }
+
+        }
     }
 }
 
@@ -179,10 +218,8 @@
 
 @media screen and (max-width:1024px) {
     .main{
-        
         .main_left{
             .main_upper_area{
-
                 .current_figure{
                     transition: font-size 0.5s ease-in-out 0.05s;
                     font-size: 1.6rem;

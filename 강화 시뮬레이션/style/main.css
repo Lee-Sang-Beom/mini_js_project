@@ -237,6 +237,34 @@
     width: 100%;
     height: 50%;
   }
+  .main .main_right .wrap_table {
+    display: flex;
+    justify-content: center;
+    font-family: "Jua";
+    height: 100%;
+  }
+  .main .main_right .wrap_table #probability_table {
+    width: 80%;
+    max-width: 100%;
+    margin: 10px;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  .main .main_right .wrap_table #probability_table thead {
+    border-bottom: 3px solid #008cba;
+    font-weight: 600;
+  }
+  .main .main_right .wrap_table #probability_table thead tr th {
+    padding: 0.15rem 0;
+    font-size: 0.9rem;
+  }
+  .main .main_right .wrap_table #probability_table tbody {
+    border-bottom: 3px solid #008cba;
+  }
+  .main .main_right .wrap_table #probability_table tbody tr td {
+    padding-top: 0.4rem;
+    font-size: 0.6rem;
+  }
 }
 @media screen and (max-width: 400px) {
   .main .main_left .main_upper_area h2 {

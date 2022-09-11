@@ -8,6 +8,9 @@ let fail_rate_figure = document.getElementById('fail_rate_figure');
 // '강화하기' 버튼
 const try_btn = document.getElementById('try_btn');
 
+// '리셋하기' 버튼
+const reset_btn = document.getElementById('reset_btn');
+
 // table 내, 강화시도 횟수 기록변수
 let try_zero_to_one= document.getElementById('try_zero_to_one');
 let try_one_to_two =document.getElementById('try_one_to_two');
@@ -36,7 +39,12 @@ function try_upgrade(){
     } else{
         alert("최대강화 상태입니다.");
     }
-    
+}
+
+function try_reset(){
+    current_reinforcement_level.innerHTML = 0;
+
 }
 /*add eventListener*/
 try_btn.addEventListener('click',try_upgrade);
+reset_btn.addEventListener('click',try_reset);

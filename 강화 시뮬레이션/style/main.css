@@ -131,6 +131,23 @@
 .main .main_left .main_bottom_area .try_btn:hover {
   font-size: 1rem;
 }
+.main .main_left .main_bottom_area .reset_btn {
+  letter-spacing: 1px;
+  font-family: "Jua";
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(1, 14, 90);
+  color: rgb(107, 255, 255);
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: font-size 0.5s ease-in-out 0.05s;
+}
+.main .main_left .main_bottom_area .reset_btn:hover {
+  font-size: 1rem;
+}
 .main .main_right {
   width: 47%;
   height: 95%;
@@ -179,25 +196,31 @@
     font-size: 1rem;
   }
   .main .main_left .main_bottom_area .success_rate .rate_text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: font-size 0.5s ease-in-out 0.05s;
   }
   .main .main_left .main_bottom_area .success_rate .rate_figure {
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: font-size 0.5s ease-in-out 0.05s;
   }
   .main .main_left .main_bottom_area .fail_rate .rate_text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: font-size 0.5s ease-in-out 0.05s;
   }
   .main .main_left .main_bottom_area .fail_rate .rate_figure {
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: font-size 0.5s ease-in-out 0.05s;
   }
   .main .main_left .main_bottom_area .try_btn {
     font-size: 0.7rem;
   }
   .main .main_left .main_bottom_area .try_btn:hover {
+    font-size: 0.8rem;
+  }
+  .main .main_left .main_bottom_area .reset_btn {
+    font-size: 0.7rem;
+  }
+  .main .main_left .main_bottom_area .reset_btn:hover {
     font-size: 0.8rem;
   }
 }
@@ -221,7 +244,7 @@
     left: 0;
   }
   .main .main_left .main_bottom_area {
-    width: 60%;
+    width: 70%;
     height: 35%;
   }
   .main .main_left .main_bottom_area .success_rate {
@@ -230,8 +253,18 @@
   .main .main_left .main_bottom_area .fail_rate {
     margin: 5px 0;
   }
-  .main .main_left .main_bottom_area .try_btn {
-    margin-top: 15px;
+  .main .main_left .main_bottom_area .wrap_btn {
+    display: flex;
+  }
+  .main .main_left .main_bottom_area .wrap_btn .try_btn {
+    top: 75%;
+    left: 35%;
+    font-size: 0.5rem;
+  }
+  .main .main_left .main_bottom_area .wrap_btn .reset_btn {
+    top: 75%;
+    left: 65%;
+    font-size: 0.5rem;
   }
   .main .main_right {
     width: 100%;
@@ -273,8 +306,9 @@
     font-size: 0.9rem;
   }
   .main .main_left .main_bottom_area {
-    width: 50%;
+    width: calc(100% - 1px);
     height: 25%;
+    border-radius: 0;
   }
   .main .main_left .main_bottom_area .success_rate {
     margin-bottom: 5px;
@@ -294,11 +328,10 @@
   .main .main_left .main_bottom_area .fail_rate .rate_figure {
     font-size: 0.8rem;
   }
-  .main .main_left .main_bottom_area .try_btn {
-    margin-top: 15px;
-    font-size: 0.5rem;
+  .main .main_left .main_bottom_area .wrap_btn .try_btn {
+    left: 30%;
   }
-  .main .main_left .main_bottom_area .try_btn:hover {
-    font-size: 0.7rem;
+  .main .main_left .main_bottom_area .wrap_btn .reset_btn {
+    left: 70%;
   }
 }/*# sourceMappingURL=main.css.map */

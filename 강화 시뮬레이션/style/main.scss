@@ -165,6 +165,28 @@ $table-border-color: #008cba;
             .try_btn:hover{
                 font-size:1rem;
             }
+
+            .reset_btn{
+                @include useFont;
+
+                position: absolute;
+                top:70%;
+                left:50%;
+                transform: translate(-50%, -50%);
+
+                background-color: rgb(1, 14, 90);
+                color:rgb(107, 255, 255);
+                padding: 5px 10px;
+                border-radius: 15px;
+
+                cursor:pointer;
+                transition: font-size 0.5s ease-in-out 0.05s;
+
+            }
+
+            .reset_btn:hover{
+                font-size:1rem;
+            }
         }
 
     }
@@ -212,7 +234,7 @@ $table-border-color: #008cba;
 }
 
 @mixin reduce_fontsize {
-    font-size:0.9rem;
+    font-size:1rem;
     transition: font-size 0.5s ease-in-out 0.05s;
 }
 
@@ -238,7 +260,6 @@ $table-border-color: #008cba;
 
             .main_bottom_area{
                 .success_rate{
-                    
                     .rate_text{
                         @include reduce_fontsize;
                     }
@@ -258,6 +279,12 @@ $table-border-color: #008cba;
                     font-size:0.7rem;
                 }
                 .try_btn:hover{
+                    font-size:0.8rem;
+                }
+                .reset_btn{
+                    font-size:0.7rem;
+                }
+                .reset_btn:hover{
                     font-size:0.8rem;
                 }
             }
@@ -292,8 +319,9 @@ $table-border-color: #008cba;
             }
 
             .main_bottom_area{
-                width: 60%;
+                width: 70%;
                 height: 35%;
+
                 .success_rate{
                     margin-bottom:5px;
                     
@@ -302,9 +330,25 @@ $table-border-color: #008cba;
                     margin:5px 0;
                     
                 }
-                .try_btn{
-                    margin-top:15px;
+
+                
+                .wrap_btn{
+                    display: flex;
+
+
+                    .try_btn{ 
+                        top:75%;                    
+                        left:35%;
+                        font-size:0.5rem;
+                    }
+
+                    .reset_btn{
+                        top:75%; 
+                        left:65%;
+                        font-size:0.5rem;
+                    }
                 }
+
                 
             }
 
@@ -357,13 +401,8 @@ $table-border-color: #008cba;
 
 @media screen and (max-width: 400px) {
     .main{
-
-
         .main_left{
-
             .main_upper_area{
-
-
                 h2{
                     margin : 15px 0 0 0;
                     left:0;
@@ -372,8 +411,9 @@ $table-border-color: #008cba;
             }
 
             .main_bottom_area{
-                width: 50%;
+                width: calc(100% - 1px);
                 height: 25%;
+                border-radius: 0;
                 .success_rate{
                     margin-bottom:5px;
                     .rate_text{
@@ -392,13 +432,16 @@ $table-border-color: #008cba;
                         font-size:0.8rem;
                     }
                 }
-                .try_btn{
-                    margin-top:15px;
-                    font-size:0.5rem;
+
+                .wrap_btn{
+                    .try_btn{
+                        left:30%;
+                    }
+                    .reset_btn{
+                        left:70%;
+                    }
                 }
-                .try_btn:hover{
-                    font-size:0.7rem;
-                }
+
             }
 
         }

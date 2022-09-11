@@ -29,3 +29,14 @@ let try_sixteen_to_seventeen = document.getElementById('try_sixteen_to_seventeen
 let try_seventeen_to_eighteen = document.getElementById('try_seventeen_to_eighteen');
 let try_eighteen_to_nineteen = document.getElementById('try_eighteen_to_nineteen');
 let try_nineteen_to_twenty = document.getElementById('try_nineteen_to_twenty');
+
+function try_upgrade(){
+    if(parseInt(current_reinforcement_level.innerHTML) < 20){
+        current_reinforcement_level.innerHTML = parseInt(current_reinforcement_level.innerHTML)+1;
+    } else{
+        alert("최대강화 상태입니다.");
+    }
+    
+}
+/*add eventListener*/
+try_btn.addEventListener('click',try_upgrade);

@@ -11,6 +11,12 @@ const try_btn = document.getElementById('try_btn');
 // '리셋하기' 버튼
 const reset_btn = document.getElementById('reset_btn');
 
+// 단계별 성공확률
+const suceess_rate_array = [100,95,90,85,80,75,70,60,50,40,35,30,25,20,15,10,5,2,1,1];
+
+// 현재 강화단계
+let current_level = 0;
+
 // table 내, 강화시도 횟수 기록변수
 let try_zero_to_one= document.getElementById('try_zero_to_one');
 let try_one_to_two =document.getElementById('try_one_to_two');
@@ -34,16 +40,35 @@ let try_eighteen_to_nineteen = document.getElementById('try_eighteen_to_nineteen
 let try_nineteen_to_twenty = document.getElementById('try_nineteen_to_twenty');
 
 function try_upgrade(){
-    if(parseInt(current_reinforcement_level.innerHTML) < 20){
-        current_reinforcement_level.innerHTML = parseInt(current_reinforcement_level.innerHTML)+1;
+
+    // 성공 시도하고자 하는 확률상태
+    const suceess_try_rate =  suceess_rate_array[current_level];
+
+    // 1~100 까지의 숫자 (확률)
+    const random_value = Math.floor(Math.random()*100)+1;
+    
+    if(random_value >= 1 && random_value <= suceess_try_rate){
+        // 강화 성공조건 : random_value가 sucess_try_rate 이하의 값을 가지는 경우
+        if(parseInt(current_reinforcement_level.innerHTML) < 20){
+            current_reinforcement_level.innerHTML = parseInt(current_reinforcement_level.innerHTML)+1;
+            alert("강화 성공");
+            current_level++;
+        } else{
+            alert("최대강화 상태입니다.");
+        }
     } else{
-        alert("최대강화 상태입니다.");
+        // 강화 실패조건 : random_value가 sucess_try_rate 초과의 값을 가지는 경우
+        alert("강화 실패");
+
     }
+
+    
 }
 
 function try_reset(){
     current_reinforcement_level.innerHTML = 0;
-
+    current_level = 0;
+    
 }
 /*add eventListener*/
 try_btn.addEventListener('click',try_upgrade);

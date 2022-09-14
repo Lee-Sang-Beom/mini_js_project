@@ -131,6 +131,9 @@
 .main .main_left .main_bottom_area .try_btn:hover {
   font-size: 1rem;
 }
+.main .main_left .main_bottom_area .try_btn:disabled {
+  background: #ccc;
+}
 .main .main_left .main_bottom_area .reset_btn {
   letter-spacing: 1px;
   font-family: "Jua";

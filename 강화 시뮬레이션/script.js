@@ -143,6 +143,11 @@ function resetTable(){
     try_nineteen_to_twenty.innerText = 0; 
 }
 
+function printPercentage(current_level){
+    sucess_rate_figure.textContent = suceess_rate_array[current_level];
+    fail_rate_figure.textContent = 100-suceess_rate_array[current_level];
+}
+
 function try_upgrade(){
 
     // 성공 시도하고자 하는 확률상태
@@ -156,16 +161,25 @@ function try_upgrade(){
         if(parseInt(current_reinforcement_level.innerText) < MAX_LEVEL){
             current_reinforcement_level.innerText = parseInt(current_reinforcement_level.innerText)+1;
             // alert("강화 성공");
-            // current_level -> current_level + 1 의 시도도, 시도횟수임.
+            // current_level -> current_level + 1 의 시도도, 시도횟수로 사용
             try_count_array[current_level] += 1;
+
+            // 테이블 시도횟수 갱신
             overallSwitchTable(current_level);
             current_level++;
+
+            // 증가된 강화상태에 대한 확률 표기 변경
+            printPercentage(current_level);
 
             if(current_level === MAX_LEVEL){
                 // MAX_LEVEL 달성 시, 사용자가 버튼 클릭을 하지 못하도록 변경 
                 alert(`최대 강화 레벨을 당설하셨습니다.`);
                 try_btn.disabled = true;
 
+                // current_level === 20 일때, 확률표기
+                sucess_rate_figure.textContent = 0;
+                fail_rate_figure.textContent = 0;
+                
             }
         } else{
             // btn을 disabled 처리한 것으로, else문 대신
@@ -175,12 +189,12 @@ function try_upgrade(){
         // alert("강화 실패");
 
         // current_level의 배열위치에 시도횟수 증가
-        console.log(random_value);
         try_count_array[current_level] += 1;
         overallSwitchTable(current_level);
 
         // 초기화되므로, 강화버튼 사용 복구
         try_btn.disabled = false;
+
     }
 }
 
@@ -189,8 +203,15 @@ function try_reset(){
     current_level = 0;
     try_count_array.fill(0);
     resetTable();
+
+    // 초기화된 강화상태에 대한 확률 표기 변경
+    printPercentage(current_level);
     alert("초기화되었습니다!");
 }
+
 /*add eventListener*/
 try_btn.addEventListener('click',try_upgrade);
 reset_btn.addEventListener('click',try_reset);
+
+// 최초실행
+printPercentage(current_level);

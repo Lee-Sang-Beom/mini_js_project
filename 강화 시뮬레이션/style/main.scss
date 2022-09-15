@@ -52,11 +52,17 @@ $table-border-color: #008cba;
 
             .current_figure{
                 transition: font-size 0.5s ease-in-out 0.05s;
-                margin-bottom: 10px;
-                font-size: 2rem;
-                font-weight: bold;
-                color:rgb(255, 255, 255);
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color:rgb(41, 41, 41);
+
+                &::before{
+                    content:'+';
+                }
             }
+
+            
 
             img{
                 width: 25%;

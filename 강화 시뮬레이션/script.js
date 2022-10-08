@@ -1,5 +1,5 @@
 // 현 강화상태를 저장하는 변수
-let current_reinforcement_level = document.getElementById('current_figure');
+let current_upgrade_level = document.getElementById('current_figure');
 
 // 현 강화상태에서 성공 | 실패확률을 표현하는 변수
 let sucess_rate_figure = document.getElementById('sucess_rate_figure');
@@ -122,13 +122,13 @@ function overallSwitchTable(current_level){
 
 function resetTable(){
     try_zero_to_one.innerText = 0; 
-    try_one_to_two.innerText.innerText = 0; 
-    try_two_to_three.innerText.innerText = 0; 
-    try_three_to_four.innerText .innerText = 0; 
+    try_one_to_two.innerText = 0; 
+    try_two_to_three.innerText = 0; 
+    try_three_to_four.innerText = 0; 
     try_four_to_five.innerText = 0; 
     try_five_to_six.innerText = 0;
     try_six_to_seven.innerText = 0;
-    try_seven_to_eight.innerText
+    try_seven_to_eight.innerText = 0;
     try_eight_to_nine.innerText = 0; 
     try_nine_to_ten.innerText = 0; 
     try_ten_to_eleven.innerText = 0; 
@@ -158,8 +158,8 @@ function try_upgrade(){
     
     if(random_value >= 1 && random_value <= suceess_try_rate){
         // 강화 성공조건 : random_value가 sucess_try_rate 이하의 값을 가지는 경우
-        if(parseInt(current_reinforcement_level.innerText) < MAX_LEVEL){
-            current_reinforcement_level.innerText = parseInt(current_reinforcement_level.innerText)+1;
+        if(parseInt(current_upgrade_level.innerText) < MAX_LEVEL){
+            current_upgrade_level.innerText = parseInt(current_upgrade_level.innerText)+1;
             // alert("강화 성공");
             // current_level -> current_level + 1 의 시도도, 시도횟수로 사용
             try_count_array[current_level] += 1;
@@ -199,7 +199,7 @@ function try_upgrade(){
 }
 
 function try_reset(){
-    current_reinforcement_level.innerText = 0;
+    current_upgrade_level.innerText = 0;
     current_level = 0;
     try_count_array.fill(0);
     resetTable();
